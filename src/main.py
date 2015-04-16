@@ -4,8 +4,8 @@ import os
 class Main:
 
 	def __init__(self):
-		self.aws_access_key_id = os.environ['EWISE_INFRA_1_ID']
-		self.aws_secret_access_key = os.environ['EWISE_INFRA_1_SECRET']
+		self.aws_access_key_id = os.environ['INFRA_1_ID']
+		self.aws_secret_access_key = os.environ['INFRA_1_SECRET']
 		self.aws_region = "us-west-2"
 
 	def connect(self):
@@ -16,5 +16,10 @@ class Main:
 			instances.append(reservation.instances[0].id)
 		print instances
 
-main = Main()
-main.connect()
+	def demotest(self):
+		return 2
+
+if __name__ == '__main__':
+	main = Main()
+	main.connect()
+	print main.demotest()
